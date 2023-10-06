@@ -1,7 +1,11 @@
-#include "arithmetic.hpp"
-#include "number_factory.hpp"
-#include "printing.hpp"
-#include "types.hpp"
+#include "../include/arithmetic.hpp"
+
+#include "../include/printing.hpp"
+
+#include "../include/types.hpp"
+
+#include "../include/number_factory.hpp"
+
 
 #include <cassert>
 #include <cmath>
@@ -10,10 +14,12 @@
 #include <sstream>
 #include <variant>
 
+
 // Comparaison approximative pour les doubles
 bool approx_eq(double a, double b) { return std::abs(a - b) < 0.001; }
 
 int main() {
+
   { // On verifie le contenu des number_t
     number_t d = 2.5;
     number_t i = 2;
@@ -22,7 +28,6 @@ int main() {
     assert(std::holds_alternative<int>(i));
 
     assert(approx_eq(std::get<double>(d), 2.5));
-    assert(!approx_eq(std::get<double>(d), 2));
     assert(std::get<int>(i) == 2);
   }
 

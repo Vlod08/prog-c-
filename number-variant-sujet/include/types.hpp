@@ -14,4 +14,5 @@ struct fraction_t {
 
 /// Type polymorphe pour representer un nombre.
 
-using number_t = std::variant<int,double>;
+using number_t = std::variant<int,double, fraction_t, std::complex<double>>;
+

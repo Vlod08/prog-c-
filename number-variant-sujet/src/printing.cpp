@@ -18,5 +18,6 @@ std::ostream &operator<<(std::ostream &o, fraction_t const &n) {
 
 /*...Compléter ici ...*/
 std::ostream& operator<<(std::ostream& o, number_t const &n) { 
-std::visit([&](const auto& n){ o<<n; }, n); 
+
+std::visit([&](const auto& arg){ o<<arg;}, n); 
 return o;}

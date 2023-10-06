@@ -1,6 +1,10 @@
+
+
 #include "../include/arithmetic.hpp"
 
 #include "../include/types.hpp"
+
+
 #include <iostream>
 #include <stdio.h>
 
@@ -10,8 +14,20 @@
 
 number_t operator+(number_t const& n1,number_t const& n2)
 {
-	number_t res;
-	int n1 get_if<int>(n1)
+	return std::visit([](auto const& arg, auto const& arg2) -> number_t{ return arg + arg2;},n1,n2);
+}
+
+number_t operator-(number_t const& n1,number_t const& n2)
+{
+	return std::visit([](auto const& arg, auto const& arg2) -> number_t{ return arg - arg2;},n1,n2);
+}
+number_t operator*(number_t const& n1,number_t const& n2)
+{
+	return std::visit([](auto const& arg, auto const& arg2) -> number_t{ return arg * arg2;},n1,n2);
+}
+number_t operator/(number_t const& n1,number_t const& n2)
+{
+	return std::visit([](auto const& arg, auto const& arg2) -> number_t{ return arg / arg2;},n1,n2);
 }
 
 // ===
@@ -47,7 +63,7 @@ fraction_t operator*(fraction_t const& f1, fraction_t const& f2 ){
 	return res;
 }
 
-fraction_t operator*(fraction_t const& f1, fraction_t const& f2 ){
+fraction_t operator/(fraction_t const& f1, fraction_t const& f2 ){
 	fraction_t res;
 	res.d = f1.d * f2.n;
 	res.n = f1.n * f2.d;
@@ -132,3 +148,5 @@ std::complex<double> operator/(std::complex<double> const &c,
                                fraction_t const &f) {
   return c / double(f);
 }
+
+

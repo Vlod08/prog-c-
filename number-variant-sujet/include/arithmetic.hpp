@@ -6,6 +6,16 @@
 
 // Declarer les operateurs arithmetiques pour number_t ici
 
+number_t operator+(fraction_t const &, number_t const &);
+number_t operator-(fraction_t const &, number_t const &);
+number_t operator*(fraction_t const &, number_t const &);
+number_t operator/(fraction_t const &, number_t const &);
+
+number_t operator+(number_t const &, number_t const &);
+number_t operator-(number_t const &, number_t const &);
+number_t operator*(number_t const &, number_t const &);
+number_t operator/(number_t const &, number_t const &);
+
 fraction_t operator+(fraction_t const &, fraction_t const &);
 fraction_t operator-(fraction_t const &, fraction_t const &);
 fraction_t operator*(fraction_t const &, fraction_t const &);
